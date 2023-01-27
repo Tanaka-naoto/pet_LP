@@ -1,6 +1,6 @@
 name: PetLp
 on:
-  push:
+  [push]:
       branches:
         - master
 jobs:
