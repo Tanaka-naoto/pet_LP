@@ -14,4 +14,4 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: aws s3 sync ./pet_LP/ s3://petmatching-lp.lobiter.site --recursive
+        run: aws s3 cp ./pet_LP/ s3://petmatching-lp.lobiter.site --recursive
