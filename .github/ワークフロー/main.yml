@@ -20,4 +20,4 @@ jobs:
 
       - name: Deploy  # S3にデプロイ 
         run: |
-        aws s3 cp ./pet_LP/ s3://petmatching-lp.lobiter.site/ --recursive
+        aws s3 cp ./pet_LP/ s3://petmatching-lp.lobiter.site --recursive
