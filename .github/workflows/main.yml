@@ -1,19 +1,76 @@
-name: PetLp
+name: deploy-html
+
 on:
   push:
-      branches:
-        - master
+    branches: [ master ]
+
+env:
+  AWS_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/S3-role
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    # strategy:
+    #   matrix:
+    #     node-version: [18]
+
+    permissions:
+    id-token: write
+    contents: read
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2  # リポジトリをチェックアウト
+    - name: Checkout
+    - uses: actions/checkout@v3
+
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v1
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+
+    # - name: build
+    #   working-directory: ./client
+    #   run:
+    #     npm install
+    #     npm run build
+
+  #   - name: Upload build result
+  #     uses: actions/upload-artifact@v1
+  #     with:
+  #       name: build
+  #       path: client/dist/
+
+  # deploy:
+  #   needs: build
+
+  #   runs-on: ubuntu-latest
 
 
-      - name: Deploy  # S3にデプロイ
-        env:
-            AWS_ACCESS_KEY_ID: ${{ secrets.SuperSecret }}
-            AWS_SECRET_ACCESS_KEY: ${{ secrets.SuperSecret }}
-        run: |
-        aws s3 cp --recursive --region ap-northeast-1 ./pet_LP/ s3://petmatching-lp.lobiter.site
+    # - name: Download build result
+    #   uses: actions/download-artifact@v2
+    #   with:
+    #     name: build
+    #     path: client/dist/
+
+    - name: Configure AWS credentials from IAM Role
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{ env.AWS_ROLE_ARN }}
+        aws-region: ${{ env.AWS_REGION }}
+        role-session-name: GitHubActionsSession
+
+    - name: Publish to AWS S3
+      uses: opspresso/action-s3-sync@master
+      env:
+        AWS_REGION: ${{ env.AWS_REGION }}
+        FROM_PATH: "pet_LP/"
+        DEST_PATH: "s3://petmatching-lp.lobiter.site"
+
+    - name: Clear cache in CloudFront
+      uses: chetan/invalidate-cloudfront-action@v2
+      env:
+        DISTRIBUTION: ${{ env.DISTRIBUTION }}
+        PATHS: "/*"
+        AWS_REGION: ${{ env.AWS_REGION }}
