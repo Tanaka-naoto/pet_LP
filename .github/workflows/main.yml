@@ -24,6 +24,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+      with:
+          fetch-depth: 1
 
     # - name: Use Node.js ${{ matrix.node-version }}
     #   uses: actions/setup-node@v1
@@ -54,8 +56,6 @@ jobs:
     #     name: build
     #     path: client/dist/
 
-    - name: build
-      working-directory: ./LP
 
     - name: Configure AWS credentials from IAM Role
       uses: aws-actions/configure-aws-credentials@v1
