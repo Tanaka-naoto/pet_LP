@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 env:
-  AWS_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/S3-role
+  AWS_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/S3-role-2
   AWS_REGION: ${{ secrets.AWS_REGION }}
   DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
 
