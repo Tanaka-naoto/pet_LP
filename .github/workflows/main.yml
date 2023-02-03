@@ -54,6 +54,9 @@ jobs:
     #     name: build
     #     path: client/dist/
 
+    - name: build
+      working-directory: ./LP
+
     - name: Configure AWS credentials from IAM Role
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -65,7 +68,7 @@ jobs:
       uses: opspresso/action-s3-sync@master
       env:
         AWS_REGION: ${{ env.AWS_REGION }}
-        FROM_PATH: "../../wrp/"
+        FROM_PATH: "/wrp/"
         DEST_PATH: "s3://petmatching-lp.lobiter.site"
 
     - name: Clear cache in CloudFront
