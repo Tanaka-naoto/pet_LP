@@ -80,7 +80,8 @@ jobs:
 
 
         - name:  Copy documents to s3
-        run: |
+          working-directory: wrp
+          run: |
           aws s3 cp --recursive --region ${{ env.AWS_REGION }} . s3://petmatching-lp.lobiter.site"
 
     - name: Clear cache in CloudFront
