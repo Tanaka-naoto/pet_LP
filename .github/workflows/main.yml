@@ -68,21 +68,21 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
         role-session-name: GitHubActionsSession
 
-    - name: Publish to AWS S3
-      uses: opspresso/action-s3-sync@master
-      with: 
-        working-directory: wrp
-      env:
-        AWS_REGION: ${{ env.AWS_REGION }}
-        FROM_PATH: "/wrp/"
-        DEST_PATH: "s3://petmatching-lp.lobiter.site"
+    # - name: Publish to AWS S3
+    #   uses: opspresso/action-s3-sync@master
+    #   with: 
+    #     working-directory: wrp
+    #   env:
+    #     AWS_REGION: ${{ env.AWS_REGION }}
+    #     FROM_PATH: "."
+    #     DEST_PATH: "s3://petmatching-lp.lobiter.site"
 
 
 
-        # - name:  Copy documents to s3
-        #   working-directory: wrp
-        #   run: |
-        #   aws s3 cp --recursive --region ${{ env.AWS_REGION }} . s3://petmatching-lp.lobiter.site"
+        - name:  Copy documents to s3
+            working-directory: wrp
+          run: |
+          aws s3 cp --recursive . s3://petmatching-lp.lobiter.site"/
 
     - name: Clear cache in CloudFront
       uses: chetan/invalidate-cloudfront-action@v2
