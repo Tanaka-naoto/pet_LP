@@ -70,11 +70,10 @@ jobs:
 
     - name: Publish to AWS S3
       uses: opspresso/action-s3-sync@master
-      with: working-directory: wrp
       
       env:
         AWS_REGION: ${{ env.AWS_REGION }}
-        FROM_PATH: "."
+        FROM_PATH: "./wrp/"
         DEST_PATH: "s3://petmatching-lp.lobiter.site"
 
 
