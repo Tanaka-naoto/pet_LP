@@ -82,7 +82,7 @@ jobs:
     - name:  Copy documents to s3
       working-directory: wrp
       run: |
-      aws s3 cp --recursive . s3://petmatching-lp.lobiter.site"/
+        aws s3 cp --recursive . s3://petmatching-lp.lobiter.site"/
 
     - name: Clear cache in CloudFront
       uses: chetan/invalidate-cloudfront-action@v2
