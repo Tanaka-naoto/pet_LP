@@ -69,9 +69,9 @@ jobs:
         role-session-name: GitHubActionsSession
 
     - name: Publish to AWS S3
+      working-directory: wrp
       uses: opspresso/action-s3-sync@master
-      # with: 
-      #   working-directory: wrp
+      
       env:
         AWS_REGION: ${{ env.AWS_REGION }}
         FROM_PATH: "."
