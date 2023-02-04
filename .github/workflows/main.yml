@@ -24,8 +24,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      with:
-          fetch-depth: 1
+      # with:
+      #     fetch-depth: 1
 
     # - name: Use Node.js ${{ matrix.node-version }}
     #   uses: actions/setup-node@v1
@@ -56,6 +56,10 @@ jobs:
     #     name: build
     #     path: client/dist/
 
+    # defaults:
+    # run:
+    #   working-directory: wrp
+
 
     - name: Configure AWS credentials from IAM Role
       uses: aws-actions/configure-aws-credentials@v1
@@ -66,9 +70,11 @@ jobs:
 
     - name: Publish to AWS S3
       uses: opspresso/action-s3-sync@master
+      with: 
+        working-directory: wrp
       env:
         AWS_REGION: ${{ env.AWS_REGION }}
-        FROM_PATH: "/wrp/*"
+        FROM_PATH: "."
         DEST_PATH: "s3://petmatching-lp.lobiter.site"
 
     - name: Clear cache in CloudFront
