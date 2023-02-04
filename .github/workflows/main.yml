@@ -82,7 +82,7 @@ jobs:
     - name:  Copy documents to s3
       # working-directory: wrp
       run: |
-        aws s3 cp --recursive -region ap-northeast-1 wrp s3://petmatching-lp.lobiter.site
+        aws s3 cp --recursive -region ${{ env.AWS_REGION }} wrp s3://petmatching-lp.lobiter.site
       # run:
       #   aws s3 sync --delete --region ap-northeast-1 ./wrp/ s3://petmatching-lp.lobiter.site
 
