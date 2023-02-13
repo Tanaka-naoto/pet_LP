@@ -70,7 +70,7 @@ a {
 }
 
 #main_visual {
-  background: url(main_visual.jpg) no-repeat center center;
+  background: url(images/jpg/main_visual.jpg) no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -114,7 +114,14 @@ a {
   vertical-align: bottom;
 }
 
+@media screen and (max-width: 375px) {
+  #main_visual .trophy_area {
+    display: none;
+  }
+}
+
 #main_visual .link {
+  width: 30%;
   position: absolute;
   bottom: 1%;
   left: 2%;
@@ -124,7 +131,7 @@ a {
   position: absolute;
   right: 20px;
   bottom: 0;
-  width: 32%;
+  width: 30%;
   padding: 3%;
   text-align: center;
   background-color: white;
@@ -141,7 +148,7 @@ a {
   border-radius: 50px;
   background: linear-gradient(70deg, #00c3cd, #00e0af);
   color: white;
-  padding: 7% 0;
+  padding: 7% 5%;
   transition: .3s;
   box-shadow: 0px 5px 8px -1px rgba(7, 7, 7, 0.6);
   text-align: center;
@@ -232,7 +239,7 @@ a {
 }
 
 #realization {
-  padding-bottom: 50px;
+  padding-bottom: 5%;
 }
 
 #realization .topic_title {
@@ -248,6 +255,12 @@ a {
   font-weight: bold;
   color: white;
   font-size: 5.5vw;
+}
+
+@media screen and (min-width: 1200px) {
+  #realization .topic_title h2 {
+    font-size: 4rem;
+  }
 }
 
 #realization .wrp h2 {
@@ -284,6 +297,7 @@ a {
 
 #realization .wrp .flex-box .left .can-text {
   font-weight: bold;
+  font-size: 1.2vw;
 }
 
 #realization .wrp .flex-box .right {
@@ -296,7 +310,7 @@ a {
 
 #feature {
   background: #f8d95c;
-  padding-bottom: 30px;
+  padding-bottom: 5%;
 }
 
 #feature .wrp .topic_title {
@@ -336,7 +350,13 @@ a {
 }
 
 #feature .wrp ul li .text .box-title {
-  font-size: 1.4rem;
+  font-size: 1.6vw;
+}
+
+@media screen and (min-width: 1200px) {
+  #feature .wrp ul li .text .box-title {
+    font-size: 1.2rem;
+  }
 }
 
 #feature .wrp ul li .box {
@@ -378,6 +398,23 @@ a {
 
 #feature .wrp ul li .link {
   font-size: 0.8rem;
+}
+
+@media screen and (max-width: 414px) {
+  #feature .wrp ul {
+    flex-direction: column;
+  }
+  #feature .wrp ul li {
+    width: 100%;
+    margin-bottom: 15%;
+  }
+  #feature .wrp ul li .text .box-title {
+    font-size: 5vw;
+  }
+}
+
+#feature .wrp small {
+  font-size: 1px;
 }
 
 #usege {
@@ -441,9 +478,10 @@ a {
 }
 
 #usege .wrp .step_nav li .button_text .step_btn {
+  font-size: 2vw;
   width: 50%;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 5% 3%;
   border-radius: 18px;
   background: #ff55da;
   color: white;
@@ -462,18 +500,30 @@ a {
   font-size: 14px;
 }
 
+@media screen and (max-width: 414px) {
+  #usege .wrp .step_nav {
+    flex-direction: column;
+  }
+  #usege .wrp .step_nav li {
+    width: 100%;
+    margin-bottom: 12%;
+  }
+  #usege .wrp .step_nav li .button_text {
+    margin-top: 2%;
+  }
+  #usege .wrp .step_nav li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 #usege .wrp .step_nav:first-of-type {
   margin-bottom: 80px;
 }
 
 #CTR {
   background: #eddae7;
-  padding: 80px 0;
+  padding: 8% 0;
   position: relative;
-}
-
-#CTR .wrp {
-  max-width: 900px;
 }
 
 #CTR .wrp .flex_item {
@@ -490,19 +540,56 @@ a {
   color: #ff4193;
 }
 
+#CTR .wrp .flex_item .CTR_left h2 small {
+  font-size: 2.5vw;
+}
+
+@media screen and (min-width: 1200px) {
+  #CTR .wrp .flex_item .CTR_left h2 small {
+    font-size: 25px;
+  }
+}
+
 #CTR .wrp .flex_item .CTR_left h2 div {
-  font-size: 2.5rem;
+  font-size: 4vw;
   margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  #CTR .wrp .flex_item .CTR_left h2 div {
+    font-size: 3rem;
+  }
 }
 
 #CTR .wrp .flex_item .CTR_left .CTR_text {
   margin-bottom: 20px;
   font-weight: 700;
   color: #555555;
+  font-size: 1.5vw;
+}
+
+@media screen and (min-width: 1200px) {
+  #CTR .wrp .flex_item .CTR_left .CTR_text {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #CTR .wrp .flex_item .CTR_left .CTR_text {
+    font-size: 2.5vw;
+  }
 }
 
 #CTR .wrp .flex_item .CTR_left .btn {
-  width: 85%;
+  width: 80%;
+  padding: 3% 0;
+  font-size: 2.5vw;
+}
+
+@media screen and (min-width: 1200px) {
+  #CTR .wrp .flex_item .CTR_left .btn {
+    font-size: 2rem;
+  }
 }
 
 #CTR .wrp .flex_item .CTR_right {
@@ -514,6 +601,12 @@ a {
 #CTR .wrp .flex_item .CTR_right img {
   max-width: 200px;
   width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  #CTR {
+    padding: 80px 0;
+  }
 }
 
 #pets_problem {
@@ -541,84 +634,6 @@ a {
 
 #pets_problem .wrp .flex_item .box {
   width: 49%;
-  background-color: white;
-  padding: 3%;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#pets_problem .wrp .flex_item .box .content_wrp {
-  width: 100%;
-}
-
-#pets_problem .wrp .flex_item .box .content_wrp h3 {
-  font-size: 1.4rem;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-#pets_problem .wrp .flex_item .box .content_wrp h4 {
-  text-align: right;
-  margin-right: 21px;
-  margin-bottom: 9px;
-}
-
-#pets_problem .wrp .flex_item .box .content_wrp .inner_flex_item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 250px;
-}
-
-#pets_problem .wrp .flex_item .box .content_wrp .inner_flex_item .inner_item {
-  width: 48%;
-}
-
-#pets_problem .wrp .flex_item .left_box .left_inner_item {
-  height: 100%;
-  background: url("dog-g8a9d90c5a_1920.jpg") no-repeat center cadetblue;
-  background-size: cover;
-  border-radius: 15px;
-}
-
-#pets_problem .wrp .flex_item .right_inner_item {
-  height: 100%;
-}
-
-#pets_problem .wrp .flex_item .right_inner_item ul li {
-  background-color: #e14b4b;
-  margin: 5px 0;
-  padding: 5px;
-  font-size: 13.3px;
-  font-weight: bold;
-}
-
-#pets_problem .wrp .flex_item .right_inner_item ul li:last-child {
-  margin-bottom: 0;
-}
-
-#pets_problem .wrp .flex_item .right_inner_item ul li:first-child {
-  margin-top: 0;
-}
-
-#pets_problem .wrp .right_box .left_inner_item {
-  width: 100%;
-  height: 100%;
-  background: url("cat-g11cc580a4_1920.jpg") no-repeat center cadetblue;
-  background-size: cover;
-  border-radius: 15px;
-}
-
-#pets_problem .wrp .right_box .right_inner_item .right_inner_top_item {
-  margin-bottom: 10%;
-  text-align: center;
-}
-
-#pets_problem .wrp .right_box .right_inner_item .right_inner_top_item h2 {
-  padding: 0;
-  color: black;
 }
 
 #pets_problem .bottom-message {
@@ -644,19 +659,17 @@ a {
 
 #Resolution {
   background: #ff618e;
-  padding-bottom: 80px;
+  padding: 5% 0;
   position: relative;
 }
 
 #Resolution .wrp h1 {
   text-align: center;
-  padding: 50px;
-  color: white;
+  padding: 3% 0;
 }
 
 #Resolution .wrp h1 img {
-  vertical-align: bottom;
-  width: 470px;
+  width: 75%;
 }
 
 #Resolution .wrp h1 small {
@@ -672,7 +685,6 @@ a {
   margin-bottom: 20px;
   width: 100%;
   display: flex;
-  height: 240px;
 }
 
 #Resolution .wrp .pets-line .pet-contnet .pet-content-left {
@@ -681,33 +693,42 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 0 2.5%;
 }
 
 #Resolution .wrp .pets-line .pet-contnet .pet-content-left .left-text {
-  font-size: 1.5rem;
+  font-size: 2.5vw;
   font-weight: bold;
+}
+
+@media screen and (min-width: 1200px) {
+  #Resolution .wrp .pets-line .pet-contnet .pet-content-left .left-text {
+    font-size: 1.7rem;
+  }
 }
 
 #Resolution .wrp .pets-line .pet-contnet .pet-content-left small {
   position: absolute;
   left: 1%;
   bottom: 1%;
+  font-size: 2px;
 }
 
 #Resolution .wrp .pets-line .pet-contnet .pet-content-right {
-  background: url("terrier-g5f85d95ef_1920.jpg");
+  background: url("images/jpg/pets-line (1).jpg");
   width: 45%;
   background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 15%;
 }
 
 #Resolution .wrp .pets-line .pet-contnet #picture2 {
-  background-image: url("sad-dog-waiting-in-shelter-to-be-adopted-by-someone.jpg");
+  background-image: url("images/jpg/pets-line (2).jpg");
 }
 
 #Resolution .wrp .pets-line .pet-contnet #picture3 {
-  background-image: url("young-couple-with-cute-dog.png");
+  background-image: url("images/png/pets-line (3).png");
 }
 
 #Resolution::before {
@@ -726,4 +747,5 @@ a {
   position: absolute;
   bottom: 1%;
   right: 1%;
+  font-size: 1px;
 }

@@ -76,7 +76,7 @@ a {
 
 
 #main_visual {
-    background: url(main_visual.jpg) no-repeat center center;
+    background: url(images/jpg/main_visual.jpg) no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -139,11 +139,19 @@ a {
         
     }
 
+    @media screen and(max-width: 375px) {
+        .trophy_area {
+            display: none;
+        }
+    }
+
 
         .link {
+            width: 30%;
             position: absolute;
             bottom: 1%;
             left: 2%;
+      
         }
 
 
@@ -151,7 +159,7 @@ a {
         position: absolute;
         right: 20px;
         bottom: 0;
-        width: 32%;
+        width: 30%;
         padding: 3%;
         text-align: center;
         background-color: white;
@@ -166,13 +174,19 @@ a {
             border-radius: 50px;
             background: linear-gradient(70deg, #00c3cd, #00e0af);
             color: white;
-            padding: 7% 0;
+            padding: 7% 5%;
             transition: .3s;
             box-shadow: 0px 5px 8px -1px rgba(7,7,7,0.6);
             text-align: center;
             font-weight: bold;
             font-size: 1.2vw;
             transition: .3s;
+        }
+
+        @media screen and(max-width: 605px) {
+            .btn {
+                // font-size: 15px;
+            }
         }
 
         .btn:hover {
@@ -271,9 +285,11 @@ a {
 
 
 
+
+
 #realization {
 
-    padding-bottom: 50px;
+    padding-bottom: 5%;
 
     .topic_title {
         
@@ -288,6 +304,14 @@ a {
             font-weight: bold;
             color: white;
             font-size: 5.5vw; 
+
+            
+        }
+
+        @media screen and(min-width: 1200px) {
+            h2 {
+                font-size: 4rem;
+            }
         }
     }
 
@@ -323,6 +347,7 @@ a {
 
                 .can-text {
                     font-weight: bold;
+                    font-size: 1.2vw;
                 }
                 
             }
@@ -341,7 +366,7 @@ a {
 
 #feature {
     background: rgb(248, 217, 92);
-    padding-bottom: 30px;
+    padding-bottom: 5%;
     .wrp {
         .topic_title {
             
@@ -370,6 +395,7 @@ a {
             justify-content: space-between;
             align-items: flex-end;
             margin-bottom: 20px;
+
             li {
                 width: 30%;
 
@@ -377,8 +403,27 @@ a {
                     margin-bottom: 3%;
 
                     .box-title {
-                        font-size: 1.4rem;
+                        font-size: 1.6vw;
                     
+                    }
+
+
+
+                    // @media screen and(max-width: 1060px) {
+
+                    //     .box-title {
+                    //         font-size: 12px;
+                        
+                    //     }
+                    // }
+                    
+
+                    @media screen and(min-width: 1200px) {
+
+                        .box-title {
+                            font-size: 1.2rem;
+                        
+                        }
                     }
                 }
 
@@ -428,6 +473,26 @@ a {
                     font-size: 0.8rem;
                 }
             }
+        }
+
+        @media screen and(max-width: 414px) {
+            ul {
+                flex-direction: column;
+
+                li {
+                    width: 100%;
+                    margin-bottom: 15%;
+                    .text {
+                        .box-title {
+                            font-size: 5vw;
+                        }
+                    }
+                }
+            }
+        }
+
+        small {
+            font-size: 1px;
         }
     }
 }
@@ -518,9 +583,10 @@ a {
                     // position: absolute;
                     // bottom: 0;
                     .step_btn {
+                        font-size: 2vw;
                         width: 50%;
                         margin: 0 auto;
-                        padding:  15px 20px;
+                        padding:  5% 3%;
                         border-radius: 18px;
                         background: rgb(255, 85, 218);
                         color: white;
@@ -540,6 +606,31 @@ a {
                     }
                 }
             }
+
+            
+        }
+
+        //iphoneXRのサイズでレスポンシブ対応
+        @media screen and(max-width: 414px) {
+                
+            .step_nav {
+                flex-direction: column;
+
+                li {
+                    width: 100%;
+                    margin-bottom: 12%;
+
+                    .button_text {
+                       margin-top: 2%;
+                    }
+                }
+
+                li:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+           
+            
         }
 
         .step_nav:first-of-type {
@@ -550,10 +641,10 @@ a {
 
 #CTR {
     background: #eddae7;
-    padding: 80px 0;
+    padding: 8% 0;
     position: relative;
     .wrp {
-        max-width: 900px;
+        // max-width: 900px;
         .flex_item {
             display: flex;
             justify-content: space-between;
@@ -565,9 +656,27 @@ a {
                 width: 60%;
                 h2 {
                     color: #ff4193;
+
+                    small {
+                        font-size: 2.5vw;
+                    }
+
+                    @media screen and (min-width: 1200px) {
+                        small {
+                        font-size: 25px;
+                        }   
+                    }
+
                     div {
-                        font-size: 2.5rem;
+                        font-size: 4vw;
                         margin-bottom: 20px;
+                    }
+
+
+                    @media screen and(min-width: 1200px) {
+                        div {
+                            font-size: 3rem;
+                        }
                     }
                 }
     
@@ -575,10 +684,35 @@ a {
                     margin-bottom: 20px;
                     font-weight: 700;
                     color: #555555;
+                    font-size: 1.5vw;
                 }
+
+                @media screen and(min-width: 1200px) {
+                    .CTR_text {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                @media screen and(max-width: 768px) {
+                    .CTR_text {
+                        font-size: 2.5vw;
+                    }
+                }
+
+
     
                 .btn {
-                    width: 85%;
+                    width: 80%;
+                    padding: 3% 0;
+                    font-size: 2.5vw;
+
+                }
+
+
+                @media screen and(min-width: 1200px) {
+                    .btn {
+                        font-size: 2rem;
+                    }
                 }
             }
     
@@ -601,6 +735,13 @@ a {
     }
   
    
+}
+
+@media screen and(min-width: 1200px) {
+   #CTR {
+    padding: 80px 0;
+
+   }
 }
 
 #pets_problem {
@@ -626,100 +767,100 @@ a {
 
         .box {
             width: 49%;
-            background-color: white;
-            padding: 3%;
-            border-radius: 30px;
+            // background-color: white;
+            // padding: 3%;
+            // border-radius: 30px;
 
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
 
-            .content_wrp {
-                width: 100%;
-                h3 {
-                    font-size: 1.4rem;
-                    text-align: center;
-                    margin-bottom: 15px;
-                }
+            // .content_wrp {
+            //     width: 100%;
+            //     h3 {
+            //         font-size: 1.4rem;
+            //         text-align: center;
+            //         margin-bottom: 15px;
+            //     }
     
-                h4 {
-                    text-align: right;
-                    margin-right: 21px;
-                    margin-bottom: 9px;
-                }
-                .inner_flex_item {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    height: 250px;
-                    .inner_item {
-                        width: 48%;
-                    }
+            //     h4 {
+            //         text-align: right;
+            //         margin-right: 21px;
+            //         margin-bottom: 9px;
+            //     }
+            //     .inner_flex_item {
+            //         display: flex;
+            //         justify-content: space-between;
+            //         align-items: center;
+            //         height: 250px;
+            //         .inner_item {
+            //             width: 48%;
+            //         }
     
                     
-                }
-            }
+            //     }
+            // }
                 
             
         }
 
         
         //左の箱
-        .left_box {
+        // .left_box {
 
-            .left_inner_item { 
-                height: 100%;
-                background: url("dog-g8a9d90c5a_1920.jpg") no-repeat center cadetblue;
-                background-size: cover;
-                border-radius: 15px;
-            }
-        }
-        .right_inner_item {
-            height: 100%;
-            ul {
-                li {
-                    background-color: rgb(225, 75, 75);
-                    margin: 5px 0;
-                    padding: 5px;
-                    font-size: 13.3px;
-                    font-weight: bold;
-                }
+        //     .left_inner_item { 
+        //         height: 100%;
+        //         background: url("dog-g8a9d90c5a_1920.jpg") no-repeat center cadetblue;
+        //         background-size: cover;
+        //         border-radius: 15px;
+        //     }
+        // }
+        // .right_inner_item {
+        //     height: 100%;
+        //     ul {
+        //         li {
+        //             background-color: rgb(225, 75, 75);
+        //             margin: 5px 0;
+        //             padding: 5px;
+        //             font-size: 13.3px;
+        //             font-weight: bold;
+        //         }
 
-                li:last-child {
-                    margin-bottom: 0;
-                }
+        //         li:last-child {
+        //             margin-bottom: 0;
+        //         }
 
-                li:first-child {
-                    margin-top: 0;
-                }
-            }
-        }
+        //         li:first-child {
+        //             margin-top: 0;
+        //         }
+        //     }
+        // }
     }
 
         //右の箱
-        .right_box {
+        // .right_box {
 
-            .left_inner_item { 
-                width: 100%;
-                height: 100%;
-                background: url("cat-g11cc580a4_1920.jpg") no-repeat center cadetblue;
-                background-size: cover;
-                border-radius: 15px;
-            }
+        //     .left_inner_item { 
+        //         width: 100%;
+        //         height: 100%;
+        //         background: url("cat-g11cc580a4_1920.jpg") no-repeat center cadetblue;
+        //         background-size: cover;
+        //         border-radius: 15px;
+        //     }
 
-            .right_inner_item {
-                .right_inner_top_item {
-                    margin-bottom: 10%;
-                    text-align: center;
-                    h2 {
-                        padding: 0;
-                        color: black;
-                    }
-                }
+        //     .right_inner_item {
+        //         .right_inner_top_item {
+        //             margin-bottom: 10%;
+        //             text-align: center;
+        //             h2 {
+        //                 padding: 0;
+        //                 color: black;
+        //             }
+        //         }
                 
-            }
-        }
+        //     }
+        // }
         
        
     }
@@ -749,17 +890,17 @@ a {
 
 #Resolution {
     background:#ff618e;
-    padding-bottom: 80px;
+    padding: 5% 0;
 
     position: relative;
     .wrp {
         h1 {
             text-align: center;
-            padding: 50px;
-            color: white;
+            padding: 3% 0;
+
             img {
-                vertical-align: bottom;
-                width: 470px;
+                // vertical-align: bottom;
+                width: 75%;
             }
             small {
                 margin-left: -15px;
@@ -781,7 +922,7 @@ a {
                 width: 100%;
                 display: flex;
                 // justify-content: space-between;
-                height: 240px;
+                // height: 240px;
 
                 .pet-content-left {
                     width: 55%;
@@ -789,33 +930,45 @@ a {
                     align-items: center;
                     justify-content: center;
                     position: relative;
+                    padding: 0 2.5%;
                     .left-text {
-                        font-size: 1.5rem;
+                        font-size: 2.5vw;
                         font-weight: bold;
+                        
+                    }
+
+                    
+
+                    @media screen and(min-width: 1200px) {
+                        .left-text {
+                            font-size: 1.7rem;
+                        }
                     }
 
                     small {
                         position: absolute;
                         left: 1%;
                         bottom: 1%;
+                        font-size: 2px;
                     }
                 }
 
                 //liの右側
                 .pet-content-right {
-                    background: url("terrier-g5f85d95ef_1920.jpg");
+                    background: url("images/jpg/pets-line (1).jpg");
                     width: 45%;
                     background-position: center 30%;
                     background-size: cover;
                     background-repeat: no-repeat;
+                    padding: 15%;
                 }
 
                 #picture2 {
-                    background-image: url("sad-dog-waiting-in-shelter-to-be-adopted-by-someone.jpg");
+                    background-image: url("images/jpg/pets-line (2).jpg");
                 }
 
                 #picture3 {
-                    background-image: url("young-couple-with-cute-dog.png");
+                    background-image: url("images/png/pets-line (3).png");
                 }
 
 
@@ -843,6 +996,7 @@ a {
         position: absolute;
         bottom: 1%;
         right: 1%;
+        font-size: 1px;
     }
   
 
