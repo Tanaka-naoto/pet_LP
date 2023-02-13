@@ -141,7 +141,7 @@ a {
         
     }
 
-    @media screen and(max-width: 375px) {
+    @media screen and(max-width: 414px) {
         .trophy_area {
             display: none;
         }
@@ -196,6 +196,12 @@ a {
         }
 
         
+    }
+
+    @media screen and(max-width: 414px) {
+        .text {
+            width: 50%;
+        }
     }
 }
 
